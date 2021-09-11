@@ -1,0 +1,30 @@
+{
+  "name": "git-react-colab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "^7.14.5",
+    "axios": "^0.21.4",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.5",
+    "react-router-dom": "^5.3.0",
+    "redux": "^4.1.1",
+    "redux-thunk": "^2.3.0",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0"
+  }
+}
