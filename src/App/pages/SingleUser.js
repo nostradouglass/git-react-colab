@@ -5,7 +5,7 @@ import React from 'react'
 
 const SingleUser = () => {
     return (
-        <h3>Single user</h3>
+        <h3>Show Single user</h3>
     )
 }
 
