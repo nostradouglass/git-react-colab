@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
-import MyNavbar from '../navbar/MyNavbar';
+import MyNavbar from '../components/MyNavbar';
 
 const Main = (props) => {
     return (

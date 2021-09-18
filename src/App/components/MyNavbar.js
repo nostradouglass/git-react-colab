@@ -10,20 +10,20 @@ const MyNavbar = () => {
             <Navbar bg="light" variant="light">
                 <Container>
                     <Nav className="me-auto">
-                    <LinkContainer to={"/newAccount"}>
-                    <Nav.Link>New Account</Nav.Link>
+                        <LinkContainer to={"/newAccount"}>
+                            <Nav.Link>New Account</Nav.Link>
                         </LinkContainer>
 
                         <LinkContainer to={"/users"}>
-                        <Nav.Link>Users</Nav.Link>
+                            <Nav.Link>Users</Nav.Link>
                         </LinkContainer>
 
                         <LinkContainer to={"/user"}>
-                        <Nav.Link>User</Nav.Link>
+                            <Nav.Link>User</Nav.Link>
                         </LinkContainer>
 
                         <LinkContainer to={"/remove"}>
-                        <Nav.Link>Remove</Nav.Link>
+                            <Nav.Link>Remove</Nav.Link>
                         </LinkContainer>
 
                     </Nav>

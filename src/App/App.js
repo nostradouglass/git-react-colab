@@ -16,27 +16,27 @@ const App = () => {
             <Switch>
                 <Route exact path="/">
                     <Main >
-                    <Home />
+                        <Home />
                     </ Main>
                 </Route>
                 <Route exact path="/newAccount">
-                <Main >
-                    <NewAccount />
+                    <Main >
+                        <NewAccount />
                     </ Main>
                 </Route>
                 <Route exact path="/users">
-                <Main >
-                    <ShowUsers />
+                    <Main >
+                        <ShowUsers />
                     </ Main>
                 </Route>
                 <Route exact path="/user">
-                <Main >
-                    <SingleUser />
+                    <Main >
+                        <SingleUser />
                     </ Main>
                 </Route>
                 <Route exact path="/remove">
-                <Main >
-                    <DeleteUser />
+                    <Main >
+                        <DeleteUser />
                     </ Main>
                 </Route>
             </Switch>
