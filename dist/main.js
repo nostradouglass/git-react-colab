@@ -3679,20 +3679,34 @@ var DeleteUser = function DeleteUser() {
       setUserID = _useState2[1];
 
   var onDeleteButtonClick = function onDeleteButtonClick() {
-    axios__WEBPACK_IMPORTED_MODULE_1___default()["delete"]("http://localhost:3000/users/ ".concat(userID)).then(function (res) {
-      console.log(res);
-    });
+    if (userID) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default()["delete"]("http://localhost:3000/users/".concat(userID)).then(function (res) {
+        console.log(res);
+      });
+    }
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Delete a User by ID "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    htmlFor: "userIdInput"
+  }, "Delete a User by ID "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "input-group mb-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    id: "userIdInput",
     type: "text",
+    className: "form-control",
     value: userID,
     onChange: function onChange(e) {
       return setUserID(e.target.value);
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    className: "btn btn-outline-secondary",
+    type: "button",
     onClick: onDeleteButtonClick
-  }, "Delete user"));
+  }, "Delete User"))); // <div>
+  // <h3>Delete a User by ID </h3>   
+  // <input type = 'text' value = {userID} onChange = {(e) => setUserID(e.target.value)}/>
+  // <button className = "btn btn-primary" onClick = {onDeleteButtonClick}>Delete user</button>
+  // </div>
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DeleteUser);
