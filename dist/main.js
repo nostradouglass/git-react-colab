@@ -3702,11 +3702,7 @@ var DeleteUser = function DeleteUser() {
     className: "btn btn-outline-secondary",
     type: "button",
     onClick: onDeleteButtonClick
-  }, "Delete User"))); // <div>
-  // <h3>Delete a User by ID </h3>   
-  // <input type = 'text' value = {userID} onChange = {(e) => setUserID(e.target.value)}/>
-  // <button className = "btn btn-primary" onClick = {onDeleteButtonClick}>Delete user</button>
-  // </div>
+  }, "Delete User")));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DeleteUser);

@@ -33,12 +33,6 @@ const DeleteUser = () => {
 
     )
 
-    // <div>
-    // <h3>Delete a User by ID </h3>   
-    // <input type = 'text' value = {userID} onChange = {(e) => setUserID(e.target.value)}/>
-    // <button className = "btn btn-primary" onClick = {onDeleteButtonClick}>Delete user</button>
-
-    // </div>
 }
 
 export default DeleteUser
