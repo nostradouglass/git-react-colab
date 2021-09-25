@@ -11,11 +11,11 @@ const NewAccount = () => {
     const [pass, setPass] = useState('')
 
     const createUser = () => {
-        axios.post('localhost:3000/users/', {
-            firstName: 'Fred',
-            lastName: 'Flintstone',
-            email: 'FFlintstone@stonemail.com',
-            password: "rubblerubble"
+        axios.post('http://localhost:3000/users', {
+            firstName: first,
+            lastName: last,
+            email: email,
+            password: pass
         })
             .then(function (response) {
                 console.log(response);
@@ -27,7 +27,6 @@ const NewAccount = () => {
 
     const createUserSubmit = (e) => {
         e.preventDefault()
-        console.log("submit")
         createUser()
     }
 

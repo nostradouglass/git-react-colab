@@ -6,6 +6,7 @@ module.exports = {
     mode: 'development',
     entry: "/src/index.js",
     output: { path: path.resolve(__dirname, "dist") },
+    devtool: 'cheap-module-source-map',
     module: {
         rules: [
             {
