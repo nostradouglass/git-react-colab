@@ -19,7 +19,7 @@ const SingleUser = () => {
 
     return (
         <div>
-            <h3>Show Single user</h3>
+            <h2>Show Single user</h2>
             <br />
             <Form>
                 <Form.Group className="mb-3" controlId="name">
