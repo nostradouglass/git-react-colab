@@ -9,22 +9,30 @@ const DeleteUser = () => {
     const [userID, setUserID] = useState('');
 
     const onDeleteButtonClick = () => {
-        axios.delete(`http://localhost:3000/users/ ${userID}`).then((res) => {
-            console.log(res)
-        })
+        if(userID){
+            axios.delete(`http://localhost:3000/users/${userID}`).then((res) => {
+                console.log(res)
+            })
+        }
+     
      
     }
 
     return (
-        <div>
-        <h3>Delete a User by ID </h3>   
-        <input type = 'text' value = {userID} onChange = {(e) => setUserID(e.target.value)}/>
-        <button onClick = {onDeleteButtonClick}>Delete user</button>
 
+        <div>
+            <label htmlFor = "userIdInput" >Delete a User by ID </label> 
+            <div className ="input-group mb-3">
+           
+                <input id = "userIdInput" type="text" className= "form-control" value = {userID} onChange = {(e) => setUserID(e.target.value)}/>
+                <button className ="btn btn-outline-secondary" type="button"  onClick = {onDeleteButtonClick}>Delete this User</button>
+            </div>
+           
         </div>
-        
-        
+       
+
     )
+
 }
 
 export default DeleteUser
