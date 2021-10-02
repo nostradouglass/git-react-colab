@@ -48,7 +48,7 @@ const ShowUsers = () => {
 
     return (
         <div>
-            <h3>Show All users</h3>
+            <h4>Show All users</h4>
             <br />
             <ul style={{listStyleType:"none"}}>
                 {mapUsers()}
