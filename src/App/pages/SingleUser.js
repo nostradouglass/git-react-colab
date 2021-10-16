@@ -7,13 +7,12 @@ import axios from 'axios';
 const SingleUser = () => {
 
     const [firstName, setFirstName] = useState('');
+    const [resData, setResData] = useState([]);
 
     function searchByName() {
-        console.log("Searching by name " + firstName);
-        axios.get('http://localhost:3000/user/findByFirstName', {
-            params: {
-                firstName: firstName
-            }
+        axios.get(`http://localhost:3000/users/findUserByFirstName/${firstName}`)
+        .then(res =>{
+            setResData(res.data);
         })
     }
 
@@ -37,25 +36,24 @@ const SingleUser = () => {
             <Table striped bordered hover>
                 <thead>
                     <tr>
-                        <th>#</th>
+                        
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th>Username</th>
+                        <th>Email</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
+
+                    {resData.map((user)=> {
+                        return (
+                            <tr key={user._id}>
+                            <td>{user.firstName}</td>
+                            <td>{user.lastName}</td>
+                            <td>{user.email}</td>
+                        </tr>
+                        )
+                    })}
+                   
                 </tbody>
             </Table>
 
