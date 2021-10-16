@@ -10,10 +10,13 @@ const SingleUser = () => {
     const [resData, setResData] = useState([]);
 
     function searchByName() {
-        axios.get(`http://localhost:3000/users/findUserByFirstName/${firstName}`)
-        .then(res =>{
-            setResData(res.data);
-        })
+        if(firstName.length>0) {
+            axios.get(`http://localhost:3000/users/findUserByFirstName/${firstName}`)
+            .then(res =>{
+                setResData(res.data);
+            })
+        }
+        
     }
 
     return (
