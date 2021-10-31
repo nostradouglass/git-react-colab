@@ -9,6 +9,7 @@ const NewAccount = () => {
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
     const [showForm, setShowForm] = useState(true)
+    const [ showLoading, setShowLoading] = useState(false)
 
     const createUser = () => {
         axios.post('http://localhost:3000/users', {
@@ -45,7 +46,7 @@ const NewAccount = () => {
                         </div><div className="col">
 
                             <form onSubmit={createUserSubmit} >
-                                <h2 style={{margin: "50px"}} lassName="text-center">
+                                <h2 style={{margin: "50px"}} className="text-center">
                                     Create new User
                                 </h2>
 
