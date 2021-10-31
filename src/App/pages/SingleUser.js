@@ -21,7 +21,7 @@ const SingleUser = () => {
     }
 
     return (
-        <div className="container">
+        <div className="container container-su">
 
             <div className="row">
             
@@ -35,7 +35,7 @@ const SingleUser = () => {
                 </Form.Group>
                 <br />
 
-                <Button variant="primary" onClick={searchByName}>Search</Button>
+                <Button className="searchbtn" variant="primary" onClick={searchByName}>Search</Button>
             </Form>
             </div>
             <div className="col"></div>
