@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import React, { useState } from 'react';
 import axios from 'axios';
+import '../css/styles.css';
 
 const SingleUser = () => {
 
@@ -20,21 +21,27 @@ const SingleUser = () => {
     }
 
     return (
-        <div>
-            <h2>Show Single user</h2>
-            <br />
+        <div className="container container-su">
+
+            <div className="row">
+            
+            <div className="col"></div>
+            <div className="col">
             <Form>
+            <h2>Show Single user</h2>
                 <Form.Group className="mb-3" controlId="name">
                     <Form.Label>Type First Name</Form.Label>
                     <Form.Control type="text" placeholder="John" value={firstName} onChange={(e)=> setFirstName(e.target.value)} />
                 </Form.Group>
                 <br />
 
-                <Button variant="primary" onClick={searchByName}>Search</Button>
+                <Button className="searchbtn" variant="primary" onClick={searchByName}>Search</Button>
             </Form>
-
-            <br />
-            <br />
+            </div>
+            <div className="col"></div>
+            </div>
+            <br/>
+            <br/>
 
             <Table striped bordered hover>
                 <thead>
