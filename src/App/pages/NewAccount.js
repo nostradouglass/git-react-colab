@@ -9,6 +9,7 @@ const NewAccount = () => {
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
     const [showForm, setShowForm] = useState(true)
+    const [ showLoading, setShowLoading] = useState(false)
 
     const createUser = () => {
         axios.post('http://localhost:3000/users', {
