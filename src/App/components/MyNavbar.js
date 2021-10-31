@@ -10,6 +10,9 @@ const MyNavbar = () => {
             <Navbar bg="light" variant="light">
                 <Container>
                     <Nav className="me-auto">
+                    <LinkContainer to={"/"}>
+                            <Nav.Link>Home</Nav.Link>
+                        </LinkContainer>
                         <LinkContainer to={"/newAccount"}>
                             <Nav.Link>New Account</Nav.Link>
                         </LinkContainer>
