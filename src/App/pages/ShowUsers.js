@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import '../css/styles.css'
+import { Link } from 'react-router-dom'
 
 const ShowUsers = () => {
 
@@ -11,7 +12,6 @@ const ShowUsers = () => {
         axios.get('http://localhost:3000/users')
             .then(function (response) {
                 // handle success
-                console.log(response);
                 setUsers(response.data)
             })
             .catch(function (error) {
@@ -32,10 +32,10 @@ const ShowUsers = () => {
         }
         return users.map((user) => {
             return (
-                <li key={user._id} style={{margin: "20px", width: "500px"}}>
+                <li key={user._id} style={{ margin: "20px", width: "500px" }}>
                     <div className="card">
                         <div className="card-header">
-                            {user.firstName} {user.lastName}
+                            <Link to={`/users/${user._id}`} > {user.firstName} {user.lastName}</Link>
                         </div>
                         <div className="card-body">
                             <h5 className="card-title">id: {user._id}</h5>
@@ -49,16 +49,16 @@ const ShowUsers = () => {
 
     return (
         <div className="container container-su">
-             <h2 className="text-center " style={{margin: "50px"}}>Show All users</h2>
+            <h2 className="text-center " style={{ margin: "50px" }}>Show All users</h2>
             <div className="row">
                 <div className="col"></div>
                 <div className="col">
-            <br />
-            <ul style={{listStyleType:"none"}}>
-                {mapUsers()}
-            </ul>
-            </div>
-            <div className="col"></div>
+                    <br />
+                    <ul style={{ listStyleType: "none" }}>
+                        {mapUsers()}
+                    </ul>
+                </div>
+                <div className="col"></div>
             </div>
         </div>
     )
