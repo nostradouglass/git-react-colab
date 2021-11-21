@@ -7,7 +7,7 @@ import NewAccount from './pages/NewAccount'
 import ShowUsers from './pages/ShowUsers'
 import SingleUser from './pages/SingleUser'
 import DeleteUser from './pages/DeleteUser'
-
+import User from './pages/User'
 
 
 const App = () => {
@@ -27,6 +27,11 @@ const App = () => {
                 <Route exact path="/users">
                     <Main >
                         <ShowUsers />
+                    </ Main>
+                </Route>
+                <Route exact path="/users/:_id">
+                    <Main >
+                        <User />
                     </ Main>
                 </Route>
                 <Route exact path="/user">
