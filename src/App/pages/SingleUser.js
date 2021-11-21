@@ -4,17 +4,18 @@ import Table from 'react-bootstrap/Table';
 import React, { useState, useCallback } from 'react';
 import axios from 'axios';
 import _debounce from 'lodash.debounce';
+import { SpinnerCircularFixed } from 'spinners-react';
 import '../css/styles.css';
 
 const SingleUser = () => {
 
     const [firstName, setFirstName] = useState('');
     const [resData, setResData] = useState([]);
+    const [showSpinner, setShowSpinner] = useState(false);
 
     const dbSearch = event => {
+        setShowSpinner(true);
         setFirstName(event.target.value)
-        //const {value: nextValue} = event.target;
-        //setFirstName(nextValue);
         debouncedSave(event.target.value); 
     }
 
@@ -27,6 +28,7 @@ const SingleUser = () => {
                 setResData(res.data);
             })
         }
+        setShowSpinner(false);
     }
 
     return (
@@ -61,6 +63,7 @@ const SingleUser = () => {
                 </thead>
                 <tbody>
 
+
                     {resData.map((user)=> {
                         return (
                             <tr key={user._id}>
@@ -73,7 +76,11 @@ const SingleUser = () => {
                    
                 </tbody>
             </Table>
-
+                    <div className="row">
+                        <div className="col"></div>
+                        <div className="col" style={{textAlign:"center"}}>< SpinnerCircularFixed size={100} enabled={showSpinner} /> </div>
+                        <div className="col"></div>
+                    </div>
         </div>
 
 
