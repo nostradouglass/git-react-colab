@@ -29,6 +29,11 @@ const SingleUser = () => {
         }
     }
 
+    const onSubmit = (e) => {
+        e.preventDefault()
+        
+    }
+
     return (
         <div className="container container-su">
 
@@ -36,7 +41,7 @@ const SingleUser = () => {
             
             <div className="col"></div>
             <div className="col">
-            <Form>
+            <Form onSubmit={onSubmit}>
             <h2>Show Single user</h2>
                 <Form.Group className="mb-3" controlId="name">
                     <Form.Label>Type First Name</Form.Label>
