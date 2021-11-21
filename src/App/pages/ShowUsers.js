@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import '../css/styles.css'
 
 const ShowUsers = () => {
 
@@ -47,13 +48,18 @@ const ShowUsers = () => {
     }
 
     return (
-        <div>
-            <h4>Show All users</h4>
+        <div className="container container-su">
+             <h2 className="text-center " style={{margin: "50px"}}>Show All users</h2>
+            <div className="row">
+                <div className="col"></div>
+                <div className="col">
             <br />
             <ul style={{listStyleType:"none"}}>
                 {mapUsers()}
             </ul>
-
+            </div>
+            <div className="col"></div>
+            </div>
         </div>
     )
 }

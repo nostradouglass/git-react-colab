@@ -111,7 +111,7 @@ const NewAccount = () => {
     }
 
     return (
-        <div className="container">
+        <div className="container container-su">
             <div className="row">
                 <div className="col"></div>
                 {showUserForm()}
