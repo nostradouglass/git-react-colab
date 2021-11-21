@@ -1,8 +1,9 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import axios from 'axios';
+import _debounce from 'lodash.debounce';
 import '../css/styles.css';
 
 const SingleUser = () => {
@@ -10,14 +11,22 @@ const SingleUser = () => {
     const [firstName, setFirstName] = useState('');
     const [resData, setResData] = useState([]);
 
-    function searchByName() {
-        if(firstName.length>0) {
-            axios.get(`http://localhost:3000/users/findUserByFirstName/${firstName}`)
+    const dbSearch = event => {
+        setFirstName(event.target.value)
+        //const {value: nextValue} = event.target;
+        //setFirstName(nextValue);
+        debouncedSave(event.target.value); 
+    }
+
+    const debouncedSave = useCallback(_debounce(firstName => searchByName(firstName), 500), [],);
+
+    function searchByName(sTerm) {
+        if(sTerm.length>0) {
+            axios.get(`http://localhost:3000/users/findUserByFirstName/${sTerm}`)
             .then(res =>{
                 setResData(res.data);
             })
         }
-        
     }
 
     return (
@@ -31,11 +40,9 @@ const SingleUser = () => {
             <h2>Show Single user</h2>
                 <Form.Group className="mb-3" controlId="name">
                     <Form.Label>Type First Name</Form.Label>
-                    <Form.Control type="text" placeholder="John" value={firstName} onChange={(e)=> setFirstName(e.target.value)} />
+                    <Form.Control type="text" placeholder="John" value={firstName} onChange={dbSearch}/>
                 </Form.Group>
                 <br />
-
-                <Button className="searchbtn" variant="primary" onClick={searchByName}>Search</Button>
             </Form>
             </div>
             <div className="col"></div>
@@ -73,4 +80,4 @@ const SingleUser = () => {
     )
 }
 
-export default SingleUser
+export default SingleUser;
